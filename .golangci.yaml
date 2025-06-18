@@ -1,0 +1,221 @@
+version: "2"
+run:
+  tests: false
+linters:
+  default: all
+  disable:
+    - containedctx
+    - contextcheck
+    - copyloopvar
+    - cyclop
+    - dogsled
+    - dupl
+    - err113
+    - errchkjson
+    - errname
+    - errorlint
+    - exhaustive
+    - exhaustruct
+    - fatcontext
+    - forcetypeassert
+    - funlen
+    - gochecknoglobals
+    - gochecknoinits
+    - gocognit
+    - goconst
+    - gocritic
+    - godot
+    - godox
+    - gomoddirectives
+    - gosec
+    - gosmopolitan
+    - interfacebloat
+    - intrange
+    - ireturn
+    - lll
+    - maintidx
+    - mnd
+    - musttag
+    - nakedret
+    - nestif
+    - nilerr
+    - nilnil
+    - nlreturn
+    - noctx
+    - nolintlint
+    - nonamedreturns
+    - paralleltest
+    - perfsprint
+    - recvcheck
+    - rowserrcheck
+    - tagalign
+    - tagliatelle
+    - testpackage
+    - unused
+    - varnamelen
+    - wrapcheck
+    - wsl
+    - funcorder
+  settings:
+    goconst:
+      min-len: 2
+      min-occurrences: 2
+    gocritic:
+      enabled-tags:
+        - diagnostic
+        - performance
+        - style
+        - experimental
+        - opinionated
+    gocyclo:
+      min-complexity: 60
+    interfacebloat:
+      max: 15
+    lll:
+      line-length: 300
+    misspell:
+      locale: US
+    staticcheck:
+      checks:
+        - all
+        - -QF1001
+        - -QF1003
+        - -QF1004
+        - -QF1007
+        - -QF1008
+        - -QF1012
+        - -S1000
+        - -S1002
+        - -S1003
+        - -S1005
+        - -S1006
+        - -S1007
+        - -S1008
+        - -S1009
+        - -S1011
+        - -S1012
+        - -S1021
+        - -S1023
+        - -S1037
+        - -S1039
+        - -S1040
+        - -SA1019
+        - -SA1029
+        - -SA4000
+        - -SA4004
+        - -SA5011
+        - -SA9004
+        - -ST1003
+        #- -ST1016
+        - -ST1019
+    revive:
+      enable-all-rules: true
+      rules:
+        - name: "unused-receiver"
+          disabled: true
+        - name: "unused-parameter"
+          disabled: true
+        - name: "var-naming"
+          disabled: true
+        - name: "line-length-limit"
+          disabled: true
+        - name: "add-constant"
+          disabled: true
+        - name: "exported"
+          disabled: true
+        - name: "use-any"
+          disabled: true
+        - name: "cyclomatic"
+          disabled: true
+        - name: "max-public-structs"
+          disabled: true
+        - name: "comment-spacings"
+          disabled: true
+        - name: "cognitive-complexity"
+          disabled: true
+        - name: "unchecked-type-assertion"
+          disabled: true
+        - name: "bare-return"
+          disabled: true
+        - name: "early-return"
+          disabled: true
+        - name: "flag-parameter"
+          disabled: true
+        - name: "unnecessary-stmt"
+          disabled: true
+        - name: "import-alias-naming"
+          disabled: true
+        - name: "import-shadowing"
+          disabled: true
+        - name: "nested-structs"
+          disabled: true
+        - name: "get-return"
+          disabled: true
+        - name: "receiver-naming"
+          disabled: true
+        - name: "function-result-limit"
+          disabled: true
+        - name: "function-length"
+          disabled: true
+        - name: "unhandled-error"
+          disabled: true
+        - name: "unexported-naming"
+          disabled: true
+        - name: "deep-exit"
+          disabled: true
+        - name: "confusing-results"
+          disabled: true  
+        - name: "blank-imports"
+          disabled: true
+        - name: "var-declaration"
+          disabled: true
+        - name: "use-errors-new"
+          disabled: true
+        - name: "indent-error-flow"
+          disabled: true
+        - name: "if-return"
+          disabled: true
+        - name: "superfluous-else"
+          disabled: true
+        - name: "argument-limit"
+          disabled: true
+        - name: "confusing-naming"
+          disabled: true
+        - name: "empty-lines"
+          disabled: true
+        - name: "duplicated-imports"
+          disabled: true
+        - name: "max-control-nesting"
+          disabled: true
+        - name: "errorf"
+          disabled: true
+        - name: "unexported-return"
+          disabled: true
+        - name: "error-return"
+          disabled: true
+        - name: "context-as-argument"
+          disabled: true
+        - name: "useless-break"
+          disabled: true
+        - name: "modifies-value-receiver"
+          disabled: true
+        - name: "bool-literal-in-expr"
+          disabled: true
+        - name: "constant-logical-expr"
+          disabled: true
+        - name: "redundant-import-alias"
+          disabled: true
+        - name: "context-keys-type"
+          disabled: true
+issues:
+  max-issues-per-linter: 5000
+  max-same-issues: 5000
+formatters:
+  enable:
+    - gofmt
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
